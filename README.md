@@ -39,12 +39,14 @@ Client mode agents are relatively simple. They make use of fingerprinting to det
 
 Servers take on the responsibility of being part of the consensus protocol and gossip protocol. The consensus protocol, powered by Raft, allows the servers to perform leader election and state replication. The gossip protocol allows for simple clustering of servers and multi-region federation. The higher burden on the server nodes means that usually they should be run on dedicated instances -- they are more resource intensive than a client node.
 
-Client nodes make up the majority of the cluster, and are very lightweight as they interface with the server nodes and maintain very little state of their own. Each cluster has usually 3 or 5 server mode agents and potentially thousands of clients.```
+Client nodes make up the majority of the cluster, and are very lightweight as they interface with the server nodes and maintain very little state of their own. Each cluster has usually 3 or 5 server mode agents and potentially thousands of clients.
+```
 
 Start with an agent:
 `nomad agent -dev`
 
 This'll give a long output starting with:
+
 ```
 ==> No configuration files loaded
 ==> Starting Nomad agent...
@@ -60,6 +62,7 @@ This'll give a long output starting with:
 
 ==> Nomad agent started! Log data will stream in below:
 ```
+
 Client - If this is running in client mode
 Log level - Standard stuff really
 Region - This is Nomad specific: configurations will run in multiple defined datacenters (your own slicing of your environments be they physical or virtual)  Default is global dc1
